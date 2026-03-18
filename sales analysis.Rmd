@@ -1,0 +1,193 @@
+---
+title: "Sales Performance and Profit Optimization Analysis"
+author: "Ajik Shadrach"
+date: "2026-03-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Sales Performance and Profit Optimization Analysis
+
+This report analyzes retail sales data to evaluate business performance and identify opportunities to improve profitability.
+
+---
+
+# Load Required Libraries
+
+```{r libraries}
+library(tidyverse)
+library(lubridate)
+library(scales)
+library(janitor)
+```
+
+---
+
+# Import Dataset
+
+```{r import-data}
+sales_data <- read.csv("superstore_sales.csv", stringsAsFactors = FALSE)
+
+sales_data <- clean_names(sales_data)
+
+str(sales_data)
+```
+
+---
+
+# Data Cleaning
+
+```{r data-cleaning}
+sales_data$order_date <- mdy(sales_data$order_date)
+sales_data$ship_date <- mdy(sales_data$ship_date)
+
+colSums(is.na(sales_data))
+
+sales_data <- distinct(sales_data)
+
+sales_data$sales <- as.numeric(sales_data$sales)
+sales_data$profit <- as.numeric(sales_data$profit)
+sales_data$discount <- as.numeric(sales_data$discount)
+sales_data$quantity <- as.numeric(sales_data$quantity)
+```
+
+---
+
+# Key Performance Indicators (KPIs)
+
+```{r kpi-calculation}
+total_sales <- sum(sales_data$sales)
+total_profit <- sum(sales_data$profit)
+total_orders <- n_distinct(sales_data$order_id)
+
+profit_margin <- total_profit / total_sales
+
+kpi_table <- data.frame(
+Total_Sales = total_sales,
+Total_Profit = total_profit,
+Total_Orders = total_orders,
+Profit_Margin = profit_margin
+)
+
+kpi_table
+```
+
+---
+
+# Regional Sales Performance
+
+```{r region-summary}
+region_summary <- sales_data %>%
+group_by(region) %>%
+summarise(
+total_sales = sum(sales),
+total_profit = sum(profit)
+)
+
+region_summary
+```
+
+## Sales by Region
+
+```{r region-plot}
+ggplot(region_summary, aes(x = reorder(region, total_sales), y = total_sales)) +
+geom_col() +
+coord_flip() +
+scale_y_continuous(labels = comma) +
+labs(
+title = "Total Sales by Region",
+x = "Region",
+y = "Total Sales"
+)
+```
+
+---
+
+# Profit Margin by Category
+
+```{r category-summary}
+category_profit <- sales_data %>%
+group_by(category) %>%
+summarise(
+total_sales = sum(sales),
+total_profit = sum(profit)
+) %>%
+mutate(profit_margin = total_profit / total_sales)
+
+category_profit
+```
+
+## Category Profit Margin Plot
+
+```{r category-plot}
+ggplot(category_profit, aes(x = category, y = profit_margin)) +
+geom_col() +
+scale_y_continuous(labels = percent) +
+labs(
+title = "Profit Margin by Category",
+x = "Category",
+y = "Profit Margin"
+)
+```
+
+---
+
+# Customer Segmentation Analysis
+
+```{r segment-summary}
+segment_summary <- sales_data %>%
+group_by(segment) %>%
+summarise(
+total_sales = sum(sales),
+total_profit = sum(profit),
+total_orders = n()
+)
+
+segment_summary
+```
+
+## Sales by Customer Segment
+
+```{r segment-plot}
+ggplot(segment_summary, aes(x = segment, y = total_sales)) +
+geom_col() +
+scale_y_continuous(labels = comma) +
+labs(
+title = "Sales by Customer Segment",
+x = "Customer Segment",
+y = "Total Sales"
+)
+```
+
+---
+
+# Discount vs Profit Relationship
+
+```{r discount-profit}
+ggplot(sales_data, aes(x = discount, y = profit)) +
+geom_point(alpha = 0.4) +
+geom_smooth(method = "lm") +
+labs(
+title = "Discount vs Profit Relationship",
+x = "Discount",
+y = "Profit"
+)
+```
+
+---
+
+# Key Business Insights
+
+- Sales performance varies significantly across regions.
+- Certain product categories generate higher profit margins than others.
+- Customer segments contribute differently to total sales.
+- Higher discounts tend to reduce profitability.
+
+---
+
+# Conclusion
+
+The analysis highlights opportunities for improving profitability by optimizing discount strategies and focusing on high-performing product categories and customer segments.
