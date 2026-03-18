@@ -1,55 +1,57 @@
-# Sales Performance & Profit Optimization Analysis
+# Sales Performance and Profit Optimization Analysis
 
 ![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
 ![R Markdown](https://img.shields.io/badge/R%20Markdown-0072B2?style=for-the-badge)
 
-An end-to-end sales analysis project using **R** to explore the Superstore dataset, uncover key insights, and optimize profit.
+An end-to-end retail sales analysis using **R** to evaluate business performance, uncover key insights, and optimize profit using the Superstore dataset.
 
 ## 📊 Project Overview
-This project analyzes retail sales data to evaluate business performance and identify opportunities to improve profitability. The analysis focuses on sales trends, regional performance, customer segmentation, discount impact, and profit optimization.
+This project analyzes the Superstore retail dataset to understand sales trends, regional performance, customer behavior, and the impact of discounts on profitability. The goal is to provide actionable insights that can help improve business decisions and increase profit margins.
 
 ## 🎯 Objectives
-- Perform data cleaning and preprocessing
-- Calculate key business KPIs
-- Analyze regional sales performance
-- Evaluate profit margins across product categories
-- Segment customers based on sales contribution
-- Examine the relationship between discount and profit
+- Perform data cleaning and preprocessing  
+- Calculate key business KPIs  
+- Analyze regional sales and profit performance  
+- Evaluate profit margins by product category and segment  
+- Understand the relationship between discount and profit  
+- Identify high-performing and underperforming areas  
 
 ## 🛠️ Tools & Technologies
 - **R**  
 - **R Markdown**  
-- **tidyverse** (dplyr, ggplot2)  
-- **lubridate**
+- **tidyverse** (dplyr, ggplot2, lubridate)  
 
 ## 📁 Project Files
-| File                      | Description                          |
-|---------------------------|--------------------------------------|
-| `sales_analysis.Rmd`      | Main R Markdown code                 |
-| `sales-analysis.html`     | **Rendered interactive report**      |
-| `superstore_sales.csv`    | Raw dataset                          |
-| `README.md`               | Project documentation                |
+| File                        | Description                              |
+|-----------------------------|------------------------------------------|
+| `sales_analysis.Rmd`        | Main R Markdown code                     |
+| `sales-analysis.html`       | **Final interactive report**             |
+| `superstore_sales.csv`      | Raw dataset                              |
+| `README.md`                 | Project documentation                    |
 
 ## 📈 View the Full Report
-👉 **[Open Interactive HTML Report](sales-analysis.html)**
 
-*(Best viewed on desktop – contains all visualizations, tables, and insights)*
+👉 **[Open Interactive HTML Report](https://shane-20.github.io/sales-performance-analysis/sales-analysis.html)**
+
+*(Best viewed on desktop – contains all visualizations, tables, and detailed insights)*
 
 ## 📊 Key Insights (Preview)
-- Central region generates highest sales but lowest profit margin
-- Technology category has the highest profit contribution
-- Excessive discounts are significantly hurting overall profit
-- Consumer segment contributes the most to total sales
+- Central region has high sales but significantly lower profit margins  
+- Technology category contributes the most to profit  
+- Heavy discounting is negatively impacting overall profitability  
+- Consumer segment drives the majority of sales volume  
 
-*(Full detailed insights and visualizations available in the HTML report)*
+*Full analysis, charts, and recommendations are available in the HTML report above.*
 
-## 🚀 How to Run the Project Locally
-1. Clone the repository
-2. Open `sales_analysis.Rmd` in RStudio
-3. Click **Knit** to regenerate the HTML report
+## 🚀 How to Run Locally
+1. Clone or download the repository  
+2. Open `sales_analysis.Rmd` in RStudio  
+3. Click **Knit** to generate the HTML report  
 
 ---
 
-**Made for Data Analytics Portfolio**
+**Built as part of my Data Analyst Portfolio**  
 
-Feel free to explore, suggest improvements, or reach out if you're hiring Data Analysts!
+Feel free to explore the report. I'm open to feedback and opportunities in data analysis!
+
+---

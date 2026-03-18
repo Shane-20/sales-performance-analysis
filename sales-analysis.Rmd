@@ -1,8 +1,16 @@
 ---
 title: "Sales Performance and Profit Optimization Analysis"
+subtitle: "Superstore Dataset Analysis using R"
 author: "Ajik Shadrach"
-date: "2026-03-04"
-output: html_document
+date: "March 2026"
+output: 
+  html_document:
+    self_contained: true      # This is the most important line
+    toc: true                 # Adds Table of Contents
+    toc_float: true           # Makes TOC float on the side
+    number_sections: true
+    theme: cosmo               # Nice clean theme
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +31,6 @@ library(lubridate)
 library(scales)
 library(janitor)
 ```
-
 ---
 
 # Import Dataset
@@ -35,7 +42,6 @@ sales_data <- clean_names(sales_data)
 
 str(sales_data)
 ```
-
 ---
 
 # Data Cleaning
@@ -53,7 +59,6 @@ sales_data$profit <- as.numeric(sales_data$profit)
 sales_data$discount <- as.numeric(sales_data$discount)
 sales_data$quantity <- as.numeric(sales_data$quantity)
 ```
-
 ---
 
 # Key Performance Indicators (KPIs)
@@ -74,7 +79,6 @@ Profit_Margin = profit_margin
 
 kpi_table
 ```
-
 ---
 
 # Regional Sales Performance
