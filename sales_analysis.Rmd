@@ -1,18 +1,20 @@
 ---
 title: "Sales Performance and Profit Optimization Analysis"
-subtitle: "Superstore Dataset Analysis using R"
+subtitle: "Superstore Retail Dataset – R Analysis"
 author: "Ajik Shadrach"
 date: "March 2026"
-output: 
+output:
   html_document:
-    self_contained: true      # This is the most important line
-    toc: true                 # Adds Table of Contents
-    toc_float: true           # Makes TOC float on the side
+    self_contained: true
+    toc: true                      # table of contents
+    toc_depth: 3
+    toc_float: true                # floating TOC
     number_sections: true
-    theme: cosmo               # Nice clean theme
+    theme: cosmo                   # clean & modern look
     highlight: tango
+    df_print: paged                # better table printing
+    code_folding: hide             # optional: hide code blocks by default
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```

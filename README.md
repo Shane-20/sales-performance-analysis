@@ -31,7 +31,7 @@ This project analyzes the Superstore retail dataset to understand sales trends, 
 
 ## 📈 View the Full Report
 
-👉 **[Open Interactive HTML Report](https://shane-20.github.io/sales-performance-analysis/sales-analysis.html)**
+👉 **[Open Interactive HTML Report](https://shane-20.github.io/sales-performance-analysis/sales_analysis.html)**
 
 *(Best viewed on desktop – contains all visualizations, tables, and detailed insights)*
 
