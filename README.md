@@ -12,9 +12,9 @@ This project analyzes retail sales data to evaluate business performance and ide
 
 ## 📈 View the Full Report
 
-👉 **[Open Interactive HTML Report](https://shane-20.github.io/sales-performance-analysis/sales_analysis.html)**
+👉 **[Open Interactive HTML Report](https://shane-20.github.io/sales-performance-analysis/sales_analysis_project.html)**
 
-*(Opens best on desktop — shows all plots, tables, insights)*
+*(Best viewed on desktop – contains all visualizations, tables, and detailed insights)*
 
 ---
 
