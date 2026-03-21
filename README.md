@@ -11,7 +11,7 @@ This project analyzes retail sales data to evaluate business performance and ide
 ---
 
 ## 📊 View Full Report
-👉 [Click here to view the complete analysis](./sales_analysis.html)
+👉 [Click here to view the complete analysis](./sales_analysis_project.html)
 
 ---
 
