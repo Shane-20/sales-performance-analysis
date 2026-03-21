@@ -78,10 +78,6 @@ This project analyzes retail sales data to evaluate business performance and ide
 
 ## 📸 Sample Visualizations
 
-*(Add screenshots here after uploading images)*
-
-Example:
-
 ![Sales by Region](sales_by_region.png)
 
 ![Profit Margin by Category](profit_margin.png)
